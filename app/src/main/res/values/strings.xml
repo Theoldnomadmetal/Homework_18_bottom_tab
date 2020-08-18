@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Homework_18_bottom_tab</string>
     <string name="next">Next</string>
+    <string name="frag1">Frag1</string>
+    <string name="frag2">Frag2</string>
+    <string name="frag3">Frag3</string>
+    <string name="they_taking_the_n_hobbits_to_isengard">They taking the \n hobbits to Isengard!!!</string>
+    <string name="one_does_not_simply_walk_into_mordor">One does not simply \n walk into Mordor!</string>
+    <string name="my_precious">My precious!!!</string>
 </resources>

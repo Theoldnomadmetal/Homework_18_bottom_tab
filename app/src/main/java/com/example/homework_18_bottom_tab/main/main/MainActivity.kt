@@ -9,18 +9,29 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setupViewPager()
+        setupBottomNav()
+        setupListeners()
     }
 
-    private fun setupViewPager() {
-        val adapter =
-            ViewPagerAdapter(
-                supportFragmentManager
-            )
+    private fun setupBottomNav() {
+        val adapter = ViewPagerAdapter(supportFragmentManager)
         viewPager.adapter = adapter
-        adapter.addFragment(FirstFragment(), "Первый фрагмент")
-        adapter.addFragment(SecondFragment(), "Второй фрагмент")
-        adapter.addFragment(ThirdFragment(), "Третий фрагмент")
-        tabLayout.setupWithViewPager(viewPager)
+        adapter.addFragment(FirstFragment())
+        adapter.addFragment(SecondFragment())
+        adapter.addFragment(ThirdFragment())
     }
+
+    private fun setupListeners() {
+        bottomNav.setOnNavigationItemSelectedListener {
+
+            when(it.itemId){
+               R.id.firstFrag -> viewPager.currentItem = 0
+               R.id.secondFrag -> viewPager.currentItem = 1
+               R.id.thirdFrag -> viewPager.currentItem = 2
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
+    }
+
+
 }
